@@ -9,17 +9,16 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import tdd.app.musicapp.apiservice.PlaylistApi
-import tdd.app.musicapp.apiservice.PlaylistService
-import tdd.app.musicapp.models.Playlist
-import tdd.app.musicapp.models.PlaylistApiResponse
-import tdd.app.musicapp.utils.BaseUnitTest
+import tdd.app.musicapp.apiservices.PlaylistApi
+import tdd.app.musicapp.apiservices.PlaylistService
+import tdd.app.musicapp.models.PlaylistApiResponseData
+import tdd.app.musicapp.util.BaseUnitTest
 
 class PlaylistServiceShould : BaseUnitTest() {
 
 
     private lateinit var playlistService: PlaylistService
-    private val playlists: List<PlaylistApiResponse> = mock()
+    private val playlists: List<PlaylistApiResponseData> = mock()
     private val playlistApi: PlaylistApi = mock()
 
     @ExperimentalCoroutinesApi

@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import tdd.app.musicapp.apiservice.PlaylistApi
+import tdd.app.musicapp.apiservices.PlaylistApi
 
 
 val interceptor: HttpLoggingInterceptor =

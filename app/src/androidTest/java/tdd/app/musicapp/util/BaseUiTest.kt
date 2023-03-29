@@ -3,14 +3,22 @@ package tdd.app.musicapp.utils
 import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.IdlingRegistry
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.TypeSafeMatcher
 import org.junit.After
 import org.junit.Before
+import org.junit.Rule
 import tdd.app.musicapp.modules.idlingResource
+import tdd.app.musicapp.ui.MainActivity
 
 open class BaseUiTest {
+
+
+    val mActivityRule = ActivityScenarioRule(MainActivity::class.java)
+        @Rule get
+
 
     @Before
     fun setup() {
