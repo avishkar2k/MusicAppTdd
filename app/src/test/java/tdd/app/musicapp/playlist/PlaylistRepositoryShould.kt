@@ -10,21 +10,21 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import tdd.app.musicapp.apiservice.PlaylistService
-import tdd.app.musicapp.models.Playlist
-import tdd.app.musicapp.models.PlaylistApiResponse
+import tdd.app.musicapp.apiservices.PlaylistService
+import tdd.app.musicapp.models.PlaylistData
+import tdd.app.musicapp.models.PlaylistApiResponseData
 import tdd.app.musicapp.models.PlaylistMapper
 import tdd.app.musicapp.repositories.PlaylistRepository
-import tdd.app.musicapp.utils.BaseUnitTest
+import tdd.app.musicapp.util.BaseUnitTest
 
 @ExperimentalCoroutinesApi
 class PlaylistRepositoryShould : BaseUnitTest() {
 
     private val playlistMapper: PlaylistMapper = mock()
-    private val exception: Throwable= RuntimeException("Something went wrong")
+    private val exception: Throwable = RuntimeException("Something went wrong")
     private val playlistService: PlaylistService = mock()
-    private val playlists: List<Playlist> = mock()
-    private val playlistApiResponse: List<PlaylistApiResponse> = mock()
+    private val playlists: List<PlaylistData> = mock()
+    private val playlistApiResponse: List<PlaylistApiResponseData> = mock()
 
 
     @Test
@@ -43,14 +43,14 @@ class PlaylistRepositoryShould : BaseUnitTest() {
     }
 
     @Test
-    fun emitErrorOnFailureFromServiceRequest():Unit = runTest{
+    fun emitErrorOnFailureFromServiceRequest(): Unit = runTest {
         val playlistRepository = mockFailureCase()
 
         assertEquals(exception, playlistRepository.getPlaylists().first().exceptionOrNull())
     }
 
     @Test
-    fun delegateBusinessLogicToMapper():Unit = runTest{
+    fun delegateBusinessLogicToMapper(): Unit = runTest {
         val playlistRepository = mockSuccessfulCase()
         playlistRepository.getPlaylists().first()
         verify(playlistMapper, times(1)).invoke(playlistApiResponse)

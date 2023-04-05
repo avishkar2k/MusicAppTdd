@@ -86,6 +86,34 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="1021257">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Pixel_XL_API_33" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="iPhone_14_Logical_API_33" value="120" />
+                  <entry key="iPhone_14_Physical_Resolution_API_33" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="28629151">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="iPhone_14_Logical_API_33" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="1432000788">
           <value>
             <AndroidTestResultsTableState>
@@ -94,6 +122,19 @@
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_XL_API_33" value="120" />
                   <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="1865783664">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="iPhone_14_Logical_API_33" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>

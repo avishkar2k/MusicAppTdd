@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PlaylistDetailsFragment"
-    android:id="@+id/playlist_detail_container">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="playlistDetailData"
+            type="tdd.app.musicapp.models.PlaylistDetailData" />
+
+        <variable
+            name="loader"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/playlist_detail_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        tools:context=".ui.PlaylistDetailsFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv_playlist_title"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text='@{playlistDetailData ==null ? "" :playlistDetailData.name}'
+            tools:text="Hard Rock Castle" />
+
+        <TextView
+            android:id="@+id/tv_playlist_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:text='@{playlistDetailData == null ? "" :playlistDetailData.details}'
+            tools:text="Rock your day with this timeless signature vibelist. \n\n • Poison \n • You shock me all night \n • Zombie \n • Rock'n Me \n • Thunderstruck \n • I Hate Myself for Loving you \n • Crazy \n • Knockin' on Heavens Door" />
+
+        <ProgressBar
+            android:id="@+id/loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{loader? View.VISIBLE : View.GONE}"
+            tools:visibility="gone" />
+
+    </LinearLayout>
+</layout>

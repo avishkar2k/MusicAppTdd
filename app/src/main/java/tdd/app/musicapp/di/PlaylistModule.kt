@@ -1,4 +1,4 @@
-package tdd.app.musicapp.modules
+package tdd.app.musicapp.di
 
 import androidx.test.espresso.IdlingResource
 import com.jakewharton.espresso.OkHttp3IdlingResource
@@ -26,7 +26,6 @@ class PlaylistModule {
 
     @Provides
     fun playlistApi(retrofit: Retrofit): PlaylistApi = retrofit.create(PlaylistApi::class.java)
-
 
     @Provides
     fun retrofit(): Retrofit = Retrofit.Builder()

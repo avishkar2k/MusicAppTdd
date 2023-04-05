@@ -1,12 +1,14 @@
 package tdd.app.musicapp.repositories
 
-import retrofit2.Retrofit
+import kotlinx.coroutines.flow.Flow
+import tdd.app.musicapp.apiservices.PlaylistService
 import tdd.app.musicapp.models.PlaylistDetailData
 import javax.inject.Inject
 
-class PlaylistDetailsRepo @Inject constructor(val retrofit: Retrofit) {
-    fun getPlaylistDetailById(id: String): PlaylistDetailData {
-        TODO("Not yet implemented")
+class PlaylistDetailRepo @Inject constructor(val playlistService: PlaylistService) {
+
+    suspend fun getPlaylistDetailById(id: String): Flow<Result<PlaylistDetailData>> {
+        return playlistService.fetchPlaylistDetailById(id)
     }
 
 }

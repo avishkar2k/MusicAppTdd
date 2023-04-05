@@ -1,4 +1,4 @@
-package tdd.app.musicapp.utils
+package tdd.app.musicapp.viewmodelfactories
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

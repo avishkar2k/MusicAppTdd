@@ -1,6 +1,6 @@
 package tdd.app.musicapp.models
 
-data class PlaylistApiResponse (
+data class PlaylistApiResponseData (
     val id:String,
     val name:String,
     val category:String

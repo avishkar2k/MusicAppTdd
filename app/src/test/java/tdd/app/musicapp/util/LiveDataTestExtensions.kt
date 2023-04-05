@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package tdd.app.musicapp.utils
+package tdd.app.musicapp.util
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer

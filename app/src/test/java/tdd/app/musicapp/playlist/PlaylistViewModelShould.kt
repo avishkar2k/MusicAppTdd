@@ -11,12 +11,12 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.mockito.Mockito.times
-import tdd.app.musicapp.models.Playlist
+import tdd.app.musicapp.models.PlaylistData
 import tdd.app.musicapp.repositories.PlaylistRepository
 import tdd.app.musicapp.viewmodels.PlaylistViewModel
-import tdd.app.musicapp.utils.BaseUnitTest
-import tdd.app.musicapp.utils.captureValues
-import tdd.app.musicapp.utils.getValueForTest
+import tdd.app.musicapp.util.BaseUnitTest
+import tdd.app.musicapp.util.captureValues
+import tdd.app.musicapp.util.getValueForTest
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -29,7 +29,7 @@ class PlaylistViewModelShould : BaseUnitTest() {
     private val exception = RuntimeException("Something went wrong")
     private val playlistRepository: PlaylistRepository = mock()
 
-    private val playlists: List<Playlist> = mock()
+    private val playlists: List<PlaylistData> = mock()
     private val expected = Result.success(playlists)
 
     @Test
@@ -99,7 +99,7 @@ class PlaylistViewModelShould : BaseUnitTest() {
         runBlocking {
             whenever(playlistRepository.getPlaylists()).thenReturn(
                 flow {
-                    emit(Result.failure<List<Playlist>>(exception))
+                    emit(Result.failure<List<PlaylistData>>(exception))
                 }
             )
         }

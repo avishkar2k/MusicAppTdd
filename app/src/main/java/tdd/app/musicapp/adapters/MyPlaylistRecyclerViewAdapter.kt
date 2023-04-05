@@ -1,20 +1,19 @@
 package tdd.app.musicapp.adapters
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import tdd.app.musicapp.R
-import tdd.app.musicapp.models.Playlist
+import androidx.recyclerview.widget.RecyclerView
 import tdd.app.musicapp.databinding.PlaylistItemBinding
+import tdd.app.musicapp.models.PlaylistData
 
 /**
- * [RecyclerView.Adapter] that can display a [Playlist].
+ * [RecyclerView.Adapter] that can display a [PlaylistData].
  */
 class MyPlaylistRecyclerViewAdapter(
-    private val values: List<Playlist>,
+    private val values: List<PlaylistData>,
     private val clickListener: (String) -> Unit
 ) : RecyclerView.Adapter<MyPlaylistRecyclerViewAdapter.ViewHolder>() {
 

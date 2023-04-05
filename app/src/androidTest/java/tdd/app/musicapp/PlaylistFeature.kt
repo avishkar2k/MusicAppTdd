@@ -5,19 +5,16 @@ import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.adevinta.android.barista.assertion.BaristaRecyclerViewAssertions.assertRecyclerViewItemCount
 import com.adevinta.android.barista.assertion.BaristaVisibilityAssertions.assertDisplayed
 import com.adevinta.android.barista.assertion.BaristaVisibilityAssertions.assertNotDisplayed
 import com.adevinta.android.barista.internal.matcher.DrawableMatcher.Companion.withDrawable
 import org.hamcrest.core.AllOf.allOf
-import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import tdd.app.musicapp.modules.idlingResource
-import tdd.app.musicapp.ui.MainActivity
-import tdd.app.musicapp.utils.BaseUiTest
+import tdd.app.musicapp.di.idlingResource
+import tdd.app.musicapp.util.BaseUiTest
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -26,9 +23,6 @@ import tdd.app.musicapp.utils.BaseUiTest
  */
 @RunWith(AndroidJUnit4::class)
 class PlaylistFeature : BaseUiTest() {
-
-    val mActivityRule = ActivityScenarioRule(MainActivity::class.java)
-        @Rule get
 
     @Test
     fun displayScreenTitle() {

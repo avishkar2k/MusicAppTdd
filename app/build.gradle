@@ -6,6 +6,10 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+
+apply from: "$project.rootDir/jacoco.gradle"
+
+
 android {
     compileSdkVersion 33
 
@@ -20,6 +24,9 @@ android {
     }
 
     buildTypes {
+        debug{
+            testCoverageEnabled = true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -67,6 +74,7 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
+    kapt "com.android.databinding:compiler:2.2.0-alpha04"
 
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'

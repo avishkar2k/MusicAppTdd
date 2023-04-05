@@ -2,24 +2,24 @@ package tdd.app.musicapp.playlist
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import tdd.app.musicapp.models.Playlist
-import tdd.app.musicapp.models.PlaylistApiResponse
+import tdd.app.musicapp.models.PlaylistData
+import tdd.app.musicapp.models.PlaylistApiResponseData
 import tdd.app.musicapp.models.PlaylistMapper
-import tdd.app.musicapp.utils.BaseUnitTest
+import tdd.app.musicapp.util.BaseUnitTest
 import tdd.app.musicapp.R
 
 class PlaylistMapperShould : BaseUnitTest() {
 
-    private val playlistApiResponseRock = PlaylistApiResponse("1", "Hard Rock Cafa", "rock")
+    private val playlistApiResponseRock = PlaylistApiResponseData("1", "Hard Rock Cafa", "rock")
 
-    private val playlistApiResponseDefault = PlaylistApiResponse("2", "Chilled House", "house")
+    private val playlistApiResponseDefault = PlaylistApiResponseData("2", "Chilled House", "house")
 
-    private val playlistApiResponseList: List<PlaylistApiResponse> = listOf(
+    private val playlistApiResponseList: List<PlaylistApiResponseData> = listOf(
         playlistApiResponseRock,
         playlistApiResponseDefault
     )
 
-    private val mappedPlaylist: List<Playlist> = PlaylistMapper().invoke(playlistApiResponseList)
+    private val mappedPlaylist: List<PlaylistData> = PlaylistMapper().invoke(playlistApiResponseList)
 
     private val playlistRock = mappedPlaylist[0]
     private val playlistDefault = mappedPlaylist[1]

@@ -1,4 +1,4 @@
-package tdd.app.musicapp.utils
+package tdd.app.musicapp.util
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import org.junit.Rule

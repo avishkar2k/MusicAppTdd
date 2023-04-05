@@ -1,4 +1,4 @@
-package tdd.app.musicapp.utils
+package tdd.app.musicapp.util
 
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import org.hamcrest.TypeSafeMatcher
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
-import tdd.app.musicapp.modules.idlingResource
+import tdd.app.musicapp.di.idlingResource
 import tdd.app.musicapp.ui.MainActivity
 
 open class BaseUiTest {

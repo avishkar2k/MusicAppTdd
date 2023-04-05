@@ -1,11 +1,16 @@
-package tdd.app.musicapp.apiservice
+package tdd.app.musicapp.apiservices
 
 import retrofit2.http.GET
-import tdd.app.musicapp.models.PlaylistApiResponse
+import retrofit2.http.Path
+import tdd.app.musicapp.models.PlaylistApiResponseData
+import tdd.app.musicapp.models.PlaylistDetailData
 
 interface PlaylistApi {
 
     @GET("playlists")
-    suspend fun fetchAllPlaylist(): List<PlaylistApiResponse>
+    suspend fun fetchAllPlaylist(): List<PlaylistApiResponseData>
+
+    @GET("playlist-details/{id}")
+    suspend fun fetchPlaylistDetailById(@Path("id") id: String): PlaylistDetailData
 
 }

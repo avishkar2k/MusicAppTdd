@@ -13,9 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import tdd.app.musicapp.adapters.MyPlaylistRecyclerViewAdapter
 import tdd.app.musicapp.databinding.FragmentPlaylistBinding
-import tdd.app.musicapp.models.Playlist
-import tdd.app.musicapp.ui.PlaylistFragmentDirections.Companion.actionPlaylistFragmentToPlaylistDetailsFragment
-import tdd.app.musicapp.utils.PlaylistViewModelFactory
+import tdd.app.musicapp.models.PlaylistData
+import tdd.app.musicapp.viewmodelfactories.PlaylistViewModelFactory
 import tdd.app.musicapp.viewmodels.PlaylistViewModel
 import javax.inject.Inject
 
@@ -56,7 +55,7 @@ class PlaylistFragment : Fragment() {
                     layoutManager =
                         LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                     adapter =
-                        MyPlaylistRecyclerViewAdapter(playlists.getOrNull() as List<Playlist>) { id ->
+                        MyPlaylistRecyclerViewAdapter(playlists.getOrNull() as List<PlaylistData>) { id ->
                             val action: NavDirections =
                                 PlaylistFragmentDirections.actionPlaylistFragmentToPlaylistDetailsFragment(
                                     id

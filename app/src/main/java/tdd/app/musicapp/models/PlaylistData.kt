@@ -2,7 +2,7 @@ package tdd.app.musicapp.models
 
 import androidx.annotation.DrawableRes
 
-data class Playlist(
+data class PlaylistData(
     val name: String,
     val category: String,
     val id: String,
